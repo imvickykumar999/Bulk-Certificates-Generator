@@ -30,4 +30,4 @@ draw.text(xy=(470,530),
         align='center',
         font=font)
 
-img.save('hackrietj2021/{}.png'.format(f'{name}'))
+img.save('pictures/{}.png'.format(f'{name}'))
