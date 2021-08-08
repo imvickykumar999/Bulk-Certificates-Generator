@@ -1,3 +1,5 @@
+# https://drive.google.com/drive/folders/1VVF-K5QqWQcvtnBZYpQAT6jgb7HOmgCf?usp=sharing
+
 from PIL import Image, ImageDraw, ImageFont
 import pandas as pd
 import os
