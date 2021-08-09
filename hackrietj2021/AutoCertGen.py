@@ -6,21 +6,37 @@ import os
 
 df = pd.read_excel('Shortlisted Teams.xlsx')
 teamleader = list(df['FULL NAME ( Team Leader )'])
+
 member1 = list(df['Full Name ( Member 1 )'])
 member2 = list(df['Full Name ( Member 2 )'])
 member3 = list(df['Full Name ( Member 3 )'])
-namelist = [teamleader, member1, member2, member3]
 
+namelist = [teamleader, member1, member2, member3]
 collegelist = list(df['College Name ( All team members must belong from same College )'])
 font = ImageFont.truetype('arial.ttf',40)
 
+def generator(text, font, loc, name):
+
+    img = Image.open('Certificate.png')
+    draw = ImageDraw.Draw(img)
+
+    draw.text(
+            xy=(375,530),
+            text='{}'.format(text),
+            fill=(0,0,0),
+            align='center',
+            font=font,
+             )
+
+    img.save(f'{loc}/{name}.png')
+
+
 for j in range(len(namelist)):
     for i in range(len(df)):
-        img = Image.open('Certificate.png')
-        draw = ImageDraw.Draw(img)
 
         name = namelist[j][i]
         college = collegelist[i]
+
         text = f'''
 
         This is to certify that
@@ -34,76 +50,28 @@ for j in range(len(namelist)):
         "Rajasthan Institute of Engineering and Technology, Jaipur".
         '''
 
-        print(namelist[j][i])
-        if namelist[j][i] != '-' and namelist[j][i] != float('nan'):
-            draw.text(xy=(470,530),
-                    text='{}'.format(text),
-                    fill=(0,0,0),
-                    align='center',
-                    font=font)
+        generator(text, font, 'participants pictures', name)
 
-            img.save('pictures/{}.png'.format(f'{name}'))
+wind = {
+        0 : ('Karna', ['Vignesh M', 'Praveen S'], 'Government College of Technology,Coimbatore', '1st'),
+        1 : ('The Grandsons', ['Nishant Giri', 'Faizan Alam'], 'Kalinga Institute of Industrial Technology, Bhubaneswar', '2nd'),
+        2 : ('Cocokasaya', ['D.v.n.kameswari', 'M.divya', 'K.vasanth'], 'Vidya Jyothi institute of technology', '3rd')
+       }
 
+for i in range(len(wind)):
+    for j in range(len(wind[i][1])):
+        winners = f'''
 
-# import smtplib
-# from email.mime.multipart import MIMEMultipart
-# from email.mime.text import MIMEText
-# from email.mime.base import MIMEBase
-# from email import encoders
-#
-# fromaddr = "imvickykumar999@gmail.com"
-# toaddr = list(df['EMAIL ID ( Team Leader )'])[0]
-#
-# # instance of MIMEMultipart
-# msg = MIMEMultipart()
-#
-# # storing the senders email address
-# msg['From'] = fromaddr
-#
-# # storing the receivers email address
-# msg['To'] = toaddr
-#
-# # storing the subject
-# msg['Subject'] = "Subject of the Mail"
-#
-# # string to store the body of the mail
-# body = "Body_of_the_mail"
-#
-# # attach the body with the msg instance
-# msg.attach(MIMEText(body, 'plain'))
-#
-# # open the file to be sent
-# filename = "File_name_with_extension"
-# attachment = open("Path of the file", "rb")
-#
-# # instance of MIMEBase and named as p
-# p = MIMEBase('application', 'octet-stream')
-#
-# # To change the payload into encoded form
-# p.set_payload((attachment).read())
-#
-# # encode into base64
-# encoders.encode_base64(p)
-#
-# p.add_header('Content-Disposition', "attachment; filename= %s" % filename)
-#
-# # attach the instance 'p' to instance 'msg'
-# msg.attach(p)
-#
-# # creates SMTP session
-# s = smtplib.SMTP('smtp.gmail.com', 587)
-#
-# # start TLS for security
-# s.starttls()
-#
-# # Authentication
-# s.login(fromaddr, "Password_of_the_sender")
-#
-# # Converts the Multipart msg into a string
-# text = msg.as_string()
-#
-# # sending the mail
-# s.sendmail(fromaddr, toaddr, text)
-#
-# # terminating the session
-# s.quit()
+        This is to certify that
+        "{wind[i][1][j]}"
+
+        student of
+        "{wind[i][2]}"
+
+        secured {wind[i][3]} Rank in HACKRIETJ-2021
+        which held on 26/6/2021 by
+        "Rajasthan Institute of Engineering and Technology, Jaipur".
+        '''
+
+        # print(wind[i][1][j])
+        generator(winners, font, 'winners pictures', wind[i][1][j])
