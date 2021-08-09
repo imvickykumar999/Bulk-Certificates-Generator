@@ -1,8 +1,8 @@
 # HACKRIETJ-2021 Participant Certificate
 
-[![hackrietj2021](https://github.com/imvickykumar999/Bulk-Certificates-Generator/blob/master/hackrietj2021/participants%20pictures/Vicky%20Kumar.png?raw=true)](https://github.com/imvickykumar999/Bulk-Certificates-Generator/blob/232077b620e82f863ce1c2f207ccad96125e3a2e/hackrietj2021/AutoCertGen.py#L61)
+### [Certificate](https://github.com/imvickykumar999/Bulk-Certificates-Generator/tree/master/hackrietj2021/participants%20pictures) : Vicky Kumar.png
 
-### Certificate : Vicky Kumar.png
+[![hackrietj2021](https://github.com/imvickykumar999/Bulk-Certificates-Generator/blob/master/hackrietj2021/participants%20pictures/Vicky%20Kumar.png?raw=true)](https://github.com/imvickykumar999/Bulk-Certificates-Generator/blob/232077b620e82f863ce1c2f207ccad96125e3a2e/hackrietj2021/AutoCertGen.py#L61)
 
 # Bulk Certificates Generator
 
