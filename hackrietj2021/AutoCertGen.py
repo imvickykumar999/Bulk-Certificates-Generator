@@ -1,5 +1,7 @@
 # https://drive.google.com/drive/folders/1VVF-K5QqWQcvtnBZYpQAT6jgb7HOmgCf?usp=sharing
 
+# Custom Code : https://github.com/imvickykumar999/Bulk-Certificates-Generator
+
 from PIL import Image, ImageDraw, ImageFont
 import pandas as pd
 import os
