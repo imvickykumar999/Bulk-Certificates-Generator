@@ -1,0 +1,8 @@
+
+It is to declare that All details in Certificate is fetched from
+Google form's output Spreadsheet "HACKRIETJ-2022 (Responses).xlsx" filled by you.
+
+It was made best readable as much as possible using "=Proper(column)" function
+in Google Spreadsheet.
+
+Certificate was Created in Bulk using "../Participation 2022.py" Python file.
