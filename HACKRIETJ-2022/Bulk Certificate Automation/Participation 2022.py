@@ -69,16 +69,16 @@ def create(listed, desig):
 
 
 # print('Students... ', namelist[:-1])
-create(namelist[:-1], 'Student')
+# create(namelist[:-1], 'Student')
 
 # print('Mentor... ', [namelist[-1]])
-create([namelist[-1]], 'Mentor')
+# create([namelist[-1]], 'Mentor')
 
 
 wind = {
         0 : (['Preethika N C', 'Subiksha T', 'Swetha Sridevi N'], 'Bannari Amman Institute Of Technology', '1st'),
         1 : (['Narottam Tomar', 'Akshay Pareek', 'Prabhat Singh', 'Vicky Kumar'], 'Rajasthan Institute Of Engineering And Technology', '2nd'),
-        2 : (['Mahipal Pareek', 'Uma kanwar'], 'Vidya Jyothi institute of Technology', '3rd')
+        2 : (['Mahipal Pareek', 'Uma Kanwar'], 'Rajasthan Institute Of Engineering And Technology', '3rd')
        }
 
 for i in range(len(wind)):
@@ -88,7 +88,7 @@ for i in range(len(wind)):
                 This Certificate Awarded  To
                 {wind[i][0][j]}
 
-                student of
+                Student of
                 {wind[i][1]}
 
                 Secured  {wind[i][2]}  Rank  in  HACKRIETJ-22
